@@ -1,8 +1,12 @@
 streamlit
 streamlit_extras
+pdfplumber
+PyPDF2
 openai
 tenacity
-PyPDF2
 ipython
+tensorflow
+keras
+yfinance
 numpy
-matplotlib
+pandas
