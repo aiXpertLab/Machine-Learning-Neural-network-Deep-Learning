@@ -53,7 +53,7 @@ For example, how would you extract the data to predict the mood of a person give
 With neural networks, you don’t need to worry about it because the networks can learn the features by themselves. 
             """
         st.markdown(main_contents)
-        st.image("./data/images/zhang.gif")
+        st.image("./data/images/aihistory.png")
     
 def st_logo(title="aiXpert!", page_title="Aritificial Intelligence"):
     st.set_page_config(page_title,  page_icon="🚀",)
@@ -84,6 +84,16 @@ def st_text_preprocessing_contents():
 def st_load_ML():
     st.image("./data/images/MachineLearning.png")
     st.markdown("""
+Supervised learning models can make predictions after seeing lots of data with the correct answers and then discovering the connections between the elements in the data that produce the correct answers. This is like a student learning new material by studying old exams that contain both questions and answers. Once the student has trained on enough old exams, the student is well prepared to take a new exam. 
+These ML systems are "supervised" in the sense that a human gives the ML system data with the known correct results.
+Two of the most common use cases for supervised learning are `regression` and `classification`.
+
+**Unsupervised** learning models make predictions by being given data that does not contain any correct answers. 
+An unsupervised learning model's goal is to identify meaningful `patterns` among the data. 
+In other words, the model has no hints on how to categorize each piece of data, but instead it must infer its own rules.
+
+A commonly used unsupervised learning model employs a technique called `clustering`. The model finds data points that demarcate natural groupings.
+
 Under supervised ML, two major subcategories are:
 
 - Regression machine learning systems – Systems where the value being predicted falls somewhere on a continuous spectrum. These systems help us with questions of “How much?” or “How many?”
@@ -93,8 +103,22 @@ Under supervised ML, two major subcategories are:
 
 The machine learning algorithms used to do this are very different from those used for supervised learning, and the topic merits its own post. However, for something to chew on in the meantime, take a look at clustering algorithms such as k-means, and also look into dimensionality reduction systems such as principle component analysis. You can also read our article on semi-supervised image classification.
 
+Deep learning is a subset of machine learning, so it doesn't replace traditional machine learning techniques but rather complements them. While deep learning has shown remarkable success in various tasks such as image recognition, natural language processing, and speech recognition, there are still many scenarios where traditional machine learning algorithms excel.
 
+Machine learning encompasses a broad range of techniques beyond deep learning, including:
+
+1. Supervised Learning: Deep learning is just one approach to supervised learning. Traditional machine learning algorithms like decision trees, support vector machines, and random forests are still widely used for tasks where interpretability and transparency are important, or when the dataset is not large enough to benefit from deep learning's complexity.
+2. Unsupervised Learning: Techniques like clustering, dimensionality reduction, and association rule learning are essential in situations where labeled data is scarce or unavailable. Deep learning models typically require large amounts of labeled data for training, which may not always be feasible.
+3. Semi-Supervised Learning: This approach leverages both labeled and unlabeled data, which is common in real-world scenarios. Traditional machine learning algorithms, along with some recent advancements, play a crucial role in semi-supervised learning.
+4. Feature Engineering: Crafting relevant features from raw data is a crucial step in building effective machine learning models. While deep learning models can automatically learn features from raw data, feature engineering is still relevant and necessary in many cases to improve model performance.
+5. Interpretability and Explainability: Understanding why a model makes certain predictions is crucial in many applications, such as healthcare and finance. Traditional machine learning algorithms often offer more transparency and interpretability compared to deep learning models, making them preferable in certain scenarios.
+6. Computational Efficiency: Deep learning models, especially large neural networks, can be computationally expensive to train and deploy. Traditional machine learning algorithms are often more computationally efficient and can be deployed on resource-constrained devices.
+
+In summary, while deep learning has revolutionized many fields, traditional machine learning techniques remain essential in various working environments due to their interpretability, efficiency, and effectiveness in scenarios with limited data or computational resources.
+
+**Machine learning's goal is to predict well on new data drawn from a (hidden) true probability distribution**. 
 """)    
+    st.image("./data/images/clustering.png")
 
 def st_DL():
     st.markdown("""
@@ -166,14 +190,20 @@ Regression is used when you need to estimate the relationship between a dependen
                 """)
     st.image("./data/images/nn1.png")
 
-def st_case_study():
-        st.image("./data/images/NLP-Pipeline.png")
-        # main_contents="""
-        #     ### 🚀 Bridge the Gap: Chatbots for Every Store 🍨
-        #     Tired of missing out on sales due to limited customer support options? Struggling to keep up with growing customer inquiries? Store Spark empowers you to seamlessly integrate a powerful ChatGPT-powered chatbot into your website, revolutionizing your customer service and boosting engagement. No coding required! No modifications for current site needed!
-        #     ### 📄Key Features📚:
-        #     -  🔍 No Coding Required: Say goodbye to developer fees and lengthy website updates. Store Spark’s user-friendly API ensures a smooth integration process.
-        #     -  📰 Empower Your Business: Offer instant customer support, improve lead generation, and boost conversion rates — all with minimal setup effort.
-        #     -  🍨 Seamless Integration: Maintain your existing website design and user experience. Store Spark seamlessly blends in, providing a unified customer journey.
-        #     """
-    
+def st_tf():
+    contents="""
+        ### 🚀 Tensorflow 🍨
+
+        TensorFlow APIs are arranged hierarchically, with the high-level APIs built on the low-level APIs. 
+        Machine learning researchers use the low-level APIs to create and explore new machine learning algorithms.
+        We will use a high-level API named `tf.keras` to define and train machine learning models and to make predictions. 
+        tf.keras is the TensorFlow variant of the open-source Keras API.
+
+        ### 📄Key Features📚:
+        -  🔍 No Coding Required: Say goodbye to developer fees and lengthy website updates. Store Spark’s user-friendly API ensures a smooth integration process.
+        -  📰 Empower Your Business: Offer instant customer support, improve lead generation, and boost conversion rates — all with minimal setup effort.
+        -  🍨 Seamless Integration: Maintain your existing website design and user experience. Store Spark seamlessly blends in, providing a unified customer journey.
+        """
+    st.markdown(contents)
+    st.image("./data/images/tf.png")
+
