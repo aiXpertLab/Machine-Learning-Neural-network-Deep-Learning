@@ -10,3 +10,4 @@ keras
 yfinance
 numpy
 pandas
+scikit-learn

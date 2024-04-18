@@ -119,8 +119,10 @@ In summary, while deep learning has revolutionized many fields, traditional mach
 **Machine learning's goal is to predict well on new data drawn from a (hidden) true probability distribution**. 
 """)    
     st.image("./data/images/clustering.png")
+    st.image("./data/images/mlpipeline.png")
 
 def st_DL():
+    st.image("./data/images/mlpipeline.png")
     st.markdown("""
 Deep learning is a technique used to make predictions using data, and it heavily relies on neural networks. 
  
@@ -141,7 +143,6 @@ Deep learning, on the other hand, specifically refers to neural networks with mu
 - Examples of deep learning architectures include convolutional neural networks (CNNs) for image analysis, recurrent neural networks (RNNs) for sequential data, and transformer-based architectures for natural language processing.
 - The depth of neural networks in deep learning refers to the number of layers, and deep networks may consist of dozens or even hundreds of layers.
 """)    
-    st.image("./data/images/book.png")
 
 def st_nn():
     st.markdown("""
