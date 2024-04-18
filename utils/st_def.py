@@ -121,29 +121,6 @@ In summary, while deep learning has revolutionized many fields, traditional mach
     st.image("./data/images/clustering.png")
     st.image("./data/images/mlpipeline.png")
 
-def st_DL():
-    st.image("./data/images/mlpipeline.png")
-    st.markdown("""
-Deep learning is a technique used to make predictions using data, and it heavily relies on neural networks. 
- 
-Deep learning framework like **TensorFlow** or **PyTorch** instead of building your own neural network. 
-That said, having some knowledge of how neural networks work is helpful because you can use it to better architect your deep learning models.
-
-**Traditional Machine Learning:**
-
-- These models typically involve feature engineering, where domain-specific features are manually crafted from raw data to feed into the learning algorithm.
-- Examples of traditional machine learning algorithms include linear regression, logistic regression, decision trees, support vector machines, and k-nearest neighbors, among others.
-- While some traditional machine learning algorithms may use ensemble techniques that combine multiple models (e.g., random forests, gradient boosting), they are not typically referred to as "multi-layer" in the same sense as deep neural networks.
-
-**Deep Learning:**
-
-Deep learning, on the other hand, specifically refers to neural networks with multiple layers (hence the term "deep").
-- Deep learning architectures consist of multiple layers of interconnected neurons, allowing them to learn complex representations and hierarchies of features directly from raw data.
-- Deep learning models are capable of automatically learning feature representations from data without requiring explicit feature engineering.
-- Examples of deep learning architectures include convolutional neural networks (CNNs) for image analysis, recurrent neural networks (RNNs) for sequential data, and transformer-based architectures for natural language processing.
-- The depth of neural networks in deep learning refers to the number of layers, and deep networks may consist of dozens or even hundreds of layers.
-""")    
-
 def st_nn():
     st.markdown("""
 A neural network is a system that learns how to make predictions by following these steps:

@@ -1,8 +1,8 @@
 import streamlit as st
-from utils import st_def, st_DL
+from utils import st_def, tab_dl
 
 st_def.st_logo(title = "👋Integrating the Attention Mechanism", page_title="Attentions",)
-st_DL.st_dl4()
+tab_dl.st_dl4()
 #------------------------------------------------------------------------
 import tensorflow as tf
 import keras
