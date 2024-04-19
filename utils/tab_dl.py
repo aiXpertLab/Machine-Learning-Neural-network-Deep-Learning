@@ -23,7 +23,7 @@ general="""
 
 
 def dl_general():
-    st.image("./data/images/mlpipeline.png")
+    st.image("./images/mlpipeline.png")
     st.markdown(general)    
     st.info("The Exchange Of Methods And Algorithms Between Human And Machine To Deep Learn And Apply Problem Solving Is Known As Deep Learning (DL) ― P.S. Jagadeesh Kumar")
 
@@ -37,7 +37,7 @@ def dl_theory():
         These gates collaboratively manage the flow of information, deciding what to retain and what to discard, thereby mitigating the issue of vanishing gradients — a common problem in standard RNNs.
     
     """)
-    st.image("./data/images/lstm.png")
+    st.image("./images/lstm.png")
     
     st.header("👩‍🏫2. Attention Mechanism")
     st.markdown("""
@@ -58,9 +58,9 @@ def dl_theory():
 
         Attention 经常会和 Encoder–Decoder 一起说，之前的文章《一文看懂 NLP 里的模型框架 Encoder-Decoder 和 Seq2Seq》 也提到了 Attention。
     """)
-    st.image("./data/images/attention.gif")
+    st.image("./images/attention.gif")
     st.header("Attention 原理的3步分解：")
-    st.image("./data/images/attentionpipeline.png")
+    st.image("./images/attentionpipeline.png")
     st.markdown("""
 
         第一步： query 和 key 进行相似度计算，得到权值
@@ -146,13 +146,13 @@ def dl_theory():
 
         Attention is all you need，没有用到CNN/RNN，乍一听也是一股清流了，但是仔细一看，本质上还是一堆向量去计算attention。
     """)
-    st.image("./data/images/attentiontypes.png")
+    st.image("./images/attentiontypes.png")
 
 
 
 
 def st_dl1():
-    st.image("./data/images/mlpipeline.png")
+    st.image("./images/mlpipeline.png")
     st.markdown("""
 
         LSTM networks are a type of Recurrent Neural Network (RNN) specially designed to remember and process sequences of data over long periods. 
@@ -176,7 +176,7 @@ def st_dl1():
     
 
 def st_dl2():
-    st.image("./data/images/mlpipeline.png")
+    st.image("./images/mlpipeline.png")
     st.markdown("""
 
                 """)
