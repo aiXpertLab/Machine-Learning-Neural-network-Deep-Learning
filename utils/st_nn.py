@@ -1,45 +1,8 @@
 import streamlit as st
 from streamlit_extras.add_vertical_space import add_vertical_space
 
-def st_nn1():
-    st.markdown("""
-A neural network is a system that learns how to make predictions by following these steps:
+def st_nn1():pass
 
-1. `Taking the input data`
-2. Making a prediction
-3. Comparing the prediction to the desired output
-4. Adjusting its internal state to predict correctly the next time
-
-The input data is stored as vectors, and you’ll use NumPy to represent the input vectors of the network as arrays. 
-
-In this first example, you have an input vector and the other two weight vectors. Who's similar?
-                
-                """)
-    st.image("./data/images/inputdata.png")
-
-def st_nn2():
-    st.markdown("""
-1. Taking the input data
-2. `Making a prediction`
-3. Comparing the prediction to the desired output
-4. Adjusting its internal state to predict correctly the next time
-
-Let's keep things straightforward and build a network with only two layers. 
-
-So far, you’ve seen that the only two operations used inside the neural network were the dot product and a sum. Both are linear operations.
-
-If you add more layers but keep using only linear operations, then adding more layers would have no effect because each layer will always have some correlation with the input of the previous layer. 
-
-What you want is to find an operation that makes the middle layers sometimes correlate with an input and sometimes not correlate.
-
-You can achieve this behavior by using nonlinear functions. These nonlinear functions are called `activation functions`. 
-There are many types of activation functions. The `ReLU` (rectified linear unit), for example, is a function that converts all negative numbers to zero. 
-This means that the network can “turn off” a weight if it’s negative, adding nonlinearity.
-
-The network you’re building will use the sigmoid activation function. You’ll use it in the last layer, layer_2. 
-
-                """)
-    st.image("./data/images/inputdata2.png")
 
 def st_nn3():
     st.markdown("""

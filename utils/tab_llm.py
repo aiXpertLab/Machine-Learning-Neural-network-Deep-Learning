@@ -1,35 +1,20 @@
 import streamlit as st
 
-general="""
+def llm_general():
+    st.markdown("""
         Deep learning is a technique used to make predictions using data, and it heavily relies on neural networks. 
-        
-        Deep learning framework like **TensorFlow** or **PyTorch** instead of building your own neural network. 
-        That said, having some knowledge of how neural networks work is helpful because you can use it to better architect your deep learning models.
-
-        **Traditional Machine Learning:**
-
-        - These models typically involve feature engineering, where domain-specific features are manually crafted from raw data to feed into the learning algorithm.
-        - Examples of traditional machine learning algorithms include linear regression, logistic regression, decision trees, support vector machines, and k-nearest neighbors, among others.
-        - While some traditional machine learning algorithms may use ensemble techniques that combine multiple models (e.g., random forests, gradient boosting), they are not typically referred to as "multi-layer" in the same sense as deep neural networks.
-
-        **Deep Learning:**
-
-        Deep learning, on the other hand, specifically refers to neural networks with multiple layers (hence the term "deep").
-        - Deep learning architectures consist of multiple layers of interconnected neurons, allowing them to learn complex representations and hierarchies of features directly from raw data.
-        - Deep learning models are capable of automatically learning feature representations from data without requiring explicit feature engineering.
-        - Examples of deep learning architectures include convolutional neural networks (CNNs) for image analysis, recurrent neural networks (RNNs) for sequential data, and transformer-based architectures for natural language processing.
-        - The depth of neural networks in deep learning refers to the number of layers, and deep networks may consist of dozens or even hundreds of layers.
-    """
+    """)
+    st.image("./images/llmroadmap.png", use_column_width=True)
+    
 
 
-def ml_datacollection():
+def llm_datacollection():
     st.image("./images/mlpipeline.png")
-    st.markdown(general)    
     st.info("The Exchange Of Methods And Algorithms Between Human And Machine To Deep Learn And Apply Problem Solving Is Known As Deep Learning (DL) ― P.S. Jagadeesh Kumar")
     st.image("./images/datasource.png")
 
 
-def ml_types():
+def llm_types():
     st.image("./images/MachineLearning.png")
     st.markdown("""
 Supervised learning models can make predictions after seeing lots of data with the correct answers and then discovering the connections between the elements in the data that produce the correct answers. This is like a student learning new material by studying old exams that contain both questions and answers. Once the student has trained on enough old exams, the student is well prepared to take a new exam. 
@@ -68,19 +53,19 @@ In summary, while deep learning has revolutionized many fields, traditional mach
 """)    
     st.image("./images/clustering.png")
 
-def ml_featureengineering():
-    st.image("./images/ml_featureenginerring.png")
+def llm_featureengineering():
+    st.image("./images/llm_featureenginerring.png")
     st.markdown("""
 
                 """)
 
-def ml_preprocessing():
-    st.image("./images/ml_preprocessing.png")
+def llm_preprocessing():
+    st.image("./images/llm_preprocessing.png")
     st.markdown("""
    
         """)
 
-def ml_python():
+def llm_python():
     st.markdown("""
 
             1. Numpy, OpenCV, and Scikit are used when working with images
@@ -95,10 +80,6 @@ def ml_python():
     st.image("./images/inputdata.png")
 
 
-def st_dl4():
-    st.markdown("""
-The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
-                """)
 def st_dl4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
@@ -154,59 +135,134 @@ def st_dl4():
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
-    st.markdown("""
-The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
+def llm_chunking():
+    st.code("""
+
+Chunking strategies
+Question 1: What is chunking and why do we chunk our data?
+Question 2: What are factors influences chunk size?
+Question 3: What are the different types of chunking methods available?
+Question 4: How to find the ideal chunk size?
+Embedding Models
+Question 1: What are vector embeddings? And what is an embedding model?
+Question 2: How embedding model is used in the context of LLM application?
+Question 3: What is the difference between embedding short and long content?
+Question 4: How to benchmark embedding models on your data?
+Question 5: Walk me through the steps of improving the sentence transformer model used for embedding
+Internal working of vector DB
+Question 1: What is vector DB?
+Question 2: How vector DB is different from traditional databases?
+Question 3: How does a vector database work?
+Question 4: Explain the difference between vector index, vector DB & vector plugins.
+Question 5: What are different vector search strategies?
+Question 6: How does clustering reduce search space? When does it fail and how can we mitigate these failures?
+Question 7: Explain the Random projection index.
+Question 8: Explain the Localitysensitive hashing (LHS) indexing method?
+Question 9: Explain the product quantization (PQ) indexing method
+Question 10: Compare different Vector indexes and given a scenario, which vector index you would use for a project?
+Question 11: How would you decide on ideal search similarity metrics for the use case?
+Question 12: Explain the different types and challenges associated with filtering in vector DB.
+Question 13: How do you determine the best vector database for your needs?
+Advanced search algorithms
+Question 1: Why it’s important to have very good search
+Question 2: What are the architecture patterns for information retrieval & semantic search, and their use cases?
+Question 3: How can you achieve efficient and accurate search results in large scale datasets?
+Question 4: Explain the keyword-based retrieval method
+Question 5: How to fine-tune re-ranking models?
+Question 6: Explain most common metric used in information retrieval and when it fails?
+Question 7: I have a recommendation system, which metric should I use to evaluate the system?
+Question 8: Compare different information retrieval metrics and which one to use when?
+Language models internal working
+Question 1: Detailed understanding of the concept of selfattention
+Question 2: Overcoming the disadvantages of the self-attention mechanism
+Question 3: Understanding positional encoding
+Question 4: Detailed explanation of Transformer architecture
+Question 5: Advantages of using a transformer instead of LSTM.
+Question 6: Difference between local attention and global attention
+Question 7: Understanding the computational and memory demands of transformers
+Question 8: Increasing the context length of an LLM.
+Question 9: How to Optimizing transformer architecture for large vocabularies
+Question 10: What is a mixture of expert models?
+Supervised finetuning of LLM
+Question 1: What is finetuning and why it’ s needed in LLM?
+Question 2: Which scenario do we need to finetune LLM?
+Question 3: How to make the decision of finetuning?
+Question 4: How do you create a fine-tuning dataset for Q&A?
+Question 5: How do you improve the model to answer only if there is sufficient context for doing so?
+Question 6: How to set hyperparameter for fine-tuning
+Question 7: How to estimate infra requirements for fine-tuning LLM?
+Question 8: How do you finetune LLM on consumer hardware?
+Question 9: What are the different categories of the PEFT method?
+Question 10: Explain different reparameterized methods for finetuning LLM?
+Question 11: What is catastrophic forgetting in the context of LLMs?
+Preference Alignment (RLHF/DPO)
+Question 1: At which stage you will decide to go for the Preference alignment type of method rather than SFT?
+Question 2: Explain Different Preference Alignment Methods?
+Question 3: What is RLHF, and how is it used?
+Question 4: Explain the reward hacking issue in RLHF.
+Evaluation of LLM system
+Question 1: How do you evaluate the best LLM model for your use case?
+Question 2: How to evaluate the RAG-based system?
+Question 3: What are the different metrics that can be used to evaluate LLM
+Question 4: Explain the Chain of verification
+Hallucination control techniques
+Question 1: What are the different forms of hallucinations?
+Question 2: How do you control hallucinations at different levels?
+Deployment of LLM
+Question 1: Why does quantization not decrease the accuracy of LLM?
+Agent-based system
+Question 1: Explain the basic concepts of an agent and the types of strategies available to implement agents.
+Question 2: Why do we need agents and what are some common strategies to implement agents?
+Question 3: Explain ReAct prompting with a code example and its advantages
+Question 4: Explain Plan and Execute prompting strategy
+Question 5: Explain OpenAI functions with code examples
+Question 6: Explain the difference between OpenAI functions vs LangChain Agents.
+Prompt Hacking
+Question 1: What is prompt hacking and why should we bother about it?
+Question 2: What are the different types of prompt hacking?
+Question 3: What are the different defense tactics from prompt hacking?
+Case study & scenario-based Question
+Question 1: How to optimize the cost of the overall LLM System?
+We can’t give away all our secrets! :)
+We’re feeling extra generous, we’re offering a 50% discount! Use the discount code below
+
+Code: LLM50
+
+Code is valid till 30th May 2024.
+
+
+
                 """)
 
-def st_dl6():
-    st.markdown("""
-
-Model: "sequential_1"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- lstm_3 (LSTM)               (None, 60, 50)            10400     
-                                                                 
- lstm_4 (LSTM)               (None, 60, 50)            20200     
-                                                                 
- permute (Permute)           (None, 50, 60)            0         
-                                                                 
- reshape (Reshape)           (None, 50, 60)            0         
-                                                                 
- permute_1 (Permute)         (None, 60, 50)            0         
-                                                                 
- reshape_1 (Reshape)         (None, 60, 50)            0         
-                                                                 
- flatten (Flatten)           (None, 3000)              0         
-                                                                 
- dense_1 (Dense)             (None, 1)                 3001      
-                                                                 
- dropout (Dropout)           (None, 1)                 0         
-                                                                 
- batch_normalization (Batch  (None, 1)                 4         
- Normalization)                                                  
-                                                                 
-=================================================================
-Total params: 33605 (131.27 KB)
-Trainable params: 33603 (131.26 KB)
-Non-trainable params: 2 (8.00 Byte)
-_________________________________________________________________
-
+def llm_rag():
+    st.code("""
+Question 1: How to increase accuracy, and reliability & make answers verifiable in LLM?
+Question 2: How does Retrieval augmented generation (RAG) work?
+Question 3: What are some of the benefits of using the RAG system?
+Question 4: What are the architecture patterns you see when you want to customize your LLM with proprietary data?
+Question 5: When should I use Fine-tuning instead of RAG?
 
                 """)
 
-def st_dl11():
-    st.markdown("""
-In this guide, we explored the complex yet fascinating task of using LSTM networks with an attention mechanism for stock price prediction, 
-specifically for Apple Inc. (AAPL). Key points include:
+def llm_promptengineering():
+    st.code("""
 
-- LSTM’s ability to capture long-term dependencies in time-series data.
-- The added advantage of the attention mechanism in focusing on relevant data points.
-- The detailed process of building, training, and evaluating the LSTM model.
+Question 1: What is the difference between Predictive/ Discriminative AI and generative AI?
+Question 2: What is LLM & how LLMs are trained?
+Question 3: What is a token in the language model?
+Question 4: How to estimate the cost of running a SaaS-based & Open source LLM model?
+Question 5: Explain the Temperature parameter and how to set it.
+Question 6: What are different decoding strategies for picking output tokens?
+Question 7: What are the different ways you can define stopping criteria in a large language model?
+Question 8: How to use stop sequence in LLMs?
+Question 9: Explain the basic structure of prompt engineering.
+Question 10: Explain the type of prompt engineering
+Question 11: Explain In-Context Learning
+Question 12: What are some of the aspects to keep in mind while using few-shots prompting?
+Question 13: What are certain strategies to write good prompts?
+Question 14: What is hallucination & how can it be controlled using prompt engineering?
+Question 15: How do I improve the reasoning ability of my LLM through prompt engineering?
+Question 16: How to improve LLM reasoning if your COT prompt fails?
 
-#### While LSTM models with attention are powerful, they have limitations:
-- The assumption that historical patterns will repeat in similar ways can be problematic, especially in volatile markets.
-- External factors like market news and global events, not captured in historical price data, can significantly influence stock prices.
 """)
 

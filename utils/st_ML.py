@@ -1,19 +1,6 @@
 import streamlit as st
 from streamlit_extras.add_vertical_space import add_vertical_space
 
-def st_ml1():
-    st.markdown("""
-
-1. Numpy, OpenCV, and Scikit are used when working with images
-2. NLTK along with Numpy and Scikit again when working with text
-3. Librosa for audio applications
-4. Matplotlib, Seaborn, and Scikit for data representation
-5. TensorFlow and Pytorch for Deep Learning applications
-6. Scipy for Scientific Computing
-7. Pandas for high-level data structures and analysis
-                
-                """)
-    st.image("./data/images/inputdata.png")
 
 def st_ml2():
     st.markdown("""
@@ -37,7 +24,7 @@ This means that the network can “turn off” a weight if it’s negative, addi
 The network you’re building will use the sigmoid activation function. You’ll use it in the last layer, layer_2. 
 
                 """)
-    st.image("./data/images/inputdata2.png")
+    st.image("./images/inputdata2.png")
 
 def st_ml3():
     st.markdown("""
@@ -85,7 +72,7 @@ def st_ml3():
             This implies that you need to compute the derivative of the error with respect to weights. 
             Since the error is computed by combining different functions, you need to take the partial derivatives of these functions.
                 """)
-    st.image("./data/images/inputdata3.png")
+    st.image("./images/inputdata3.png")
 
     st.markdown("""
 
@@ -97,7 +84,7 @@ def st_ml3():
                 Since you are starting from the end and going backward, you first need to take the partial derivative of the error with respect to the prediction. 
                 That’s the derror_dprediction in the image below:
                 """)
-    st.image("./data/images/inputdata4.png")
+    st.image("./images/inputdata4.png")
 
     st.markdown("""
             #### 📚Creating the Neural Network Class📄
@@ -222,5 +209,5 @@ With this knowledge, you’re ready to dive deeper into the world of artificial 
 - How to train a neural network and make predictions
 
                 """)
-    st.image("./data/images/nn2.png")
+    st.image("./images/nn2.png")
 

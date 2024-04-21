@@ -52,5 +52,5 @@ with tab3:
 
     st.code(f'X_train {X_train}' )
     st.success('Transformer Done!')
-    st.image("./data/images/mlpipeline.png")
+    st.image("./images/mlpipeline.png")
     
