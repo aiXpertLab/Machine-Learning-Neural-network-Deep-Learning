@@ -107,6 +107,8 @@ def st_kaldi():
         ### 🚀 Kaldi 🍨
         
         A paper is stored in data.
+        https://eleanorchodroff.com/tutorial/kaldi/training-overview.html
+        
 
         TensorFlow APIs are arranged hierarchically, with the high-level APIs built on the low-level APIs. 
         Machine learning researchers use the low-level APIs to create and explore new machine learning algorithms.
@@ -120,4 +122,5 @@ def st_kaldi():
         """
     st.markdown(contents)
     st.image("./images/kalditf.png")
+    st.image("./images/kaldi.png")
 
