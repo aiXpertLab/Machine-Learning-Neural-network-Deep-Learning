@@ -51,6 +51,13 @@ This means that, with deep learning, you can bypass the feature engineering proc
 Not having to deal with feature engineering is good because the process gets harder as the datasets become more complex. 
 For example, how would you extract the data to predict the mood of a person given a picture of her face? 
 With neural networks, you don’t need to worry about it because the networks can learn the features by themselves. 
+
+Think of AI as the entire field of transportation.
+Machine learning would be like cars in general.
+Deep learning would be a specific type of car, like a sports car.
+Neural networks would be the engine of the car.
+Large language models would be a specific type of car designed for racing, built on a powerful engine.
+
             """
         st.markdown(main_contents)
         st.image("./images/aihistory.png")
