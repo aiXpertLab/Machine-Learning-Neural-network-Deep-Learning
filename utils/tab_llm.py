@@ -1,11 +1,32 @@
 import streamlit as st
 
 def llm_general():
-    st.markdown("""
-        Deep learning is a technique used to make predictions using data, and it heavily relies on neural networks. 
-    """)
+    st.markdown("""同一分支上的模型关系更近。基于Transformer的模型显示为非灰色颜色:仅解码器模型显示为蓝色分支,仅编码器模型显示为粉红色分支,而编码器-解码器模型显示为绿色分支。时间轴上模型的垂直位置代表其发布日期。开源模型由实心方块表示,而闭源模型由空心方块表示。右下角的堆叠条形图显示来自各公司和机构的模型数量""")
+    st.image("./images/evolutiontree.png", use_column_width=True)
+    st.image("./images/llm_nlp.png", use_column_width=True)
+    st.image("./images/llm_nlp3.png", use_column_width=True)
+    st.image("./images/llm_nlp2.png", use_column_width=True)
+    st.image("./images/llm_nlp1.png", use_column_width=True)
+    st.image("./images/llm.png", use_column_width=True)
     st.image("./images/llmroadmap.png", use_column_width=True)
+    st.markdown('''https://baijiahao.baidu.com/s?id=1776081491899747518&wfr=spider&for=pc
+    - 2013. Google. word2vec. 简单的词向量方案存在局限性，因为它并不能捕捉到有关自然语言的一个重要事实：单词通常具有多种含义。
+    - LLM 的每一层都是一个 Transformer.这个模型的输入会被表示为 word2vec 式的向量，然后被输入给第一个transformer，模型会通过人类难以解释的方式修改词向量来存储它。这些新的向量（叫做隐藏状态）会被传递给这个栈的下一个
+    - transformer有一个两步的过程来更新输入通道里面每个单词的隐藏状态：
+        - 在注意力（attention）步骤里，单词会“看看周围”，去寻找具有相关上下文的其他单词并相互共享信息。
+        - 在前馈（feed-forward）步骤里，每个单词都会“思考”在之前的注意力步骤里收集的信息，并尝试预测下一个单词。
+    - 你可以把注意力机制想象成单词的匹配服务。每个单词都会生成一份清单（叫做查询向量query vector），这份清单描述的是其正在查找的单词的特征。每个单词还会创建一份描述其自身特征的清单（叫做关键向量key vector）。神经网络会将每个关键向量与每个查询向量进行比较（通过计算点积来比较），以便找到最佳匹配的单词。一旦找到匹配项，它就会将信息从生成关键向量的单词传输给生成查询向量的单词。
+    - 比方说，在上一节里，我们展示了一个假设的transformer，它计算出在部分句子“John Want his Bank to cash the”中，“his”指的是 John。幕后的发生的事情是这样的。 “his”的查询向量可能会这样表示：“我正在寻找：描写男性的名词。” “John”的关键向量可能会这么表示：“我是：描述男性的名词。”网络会检测到这两个向量匹配，并将有关“John”向量的信息搬到“his”向量内。
+    每一个注意力层都有几个“注意力头”（attention head），这意味着这种信息交换过程在每一层都会（并行）发生多次。每个注意力头专注于不同的任务：
+    正如我们上面所讨论那样，一个注意力头可能会将代词与名词进行匹配。
+    另一个注意力头可能致力于解决“bank”等同音异义词的含义。
+    第三个注意力头可能会将双单词的短语链接在一起，比如“Joe Biden”。诸如此类。
+    注意力头经常是按顺序操作，一层注意力操作的结果会变成后续层注意力头的输入。事实上，我们上面列出的每一项任务可能轻易地就需要多个注意力头，而不仅仅是一个。
+    GPT-3 的最大版本有 96 层，每层有 96 个注意力头，因此 GPT-3 每次预测新的单词时都会执行 9216 （96 x 96）次注意力操作。
+    - 训练过程分两步进行。首先是“前向传播”（forward pass），打开总水阀，检查水是不是从正确的水龙头流出来。然后关闭总水阀，这时候开始“反向传播”（backward pass），松鼠们开始赛跑沿着每根管道一路拧紧和松开阀门。在数字神经网络当中，松鼠的角色是由一种叫做反向传播（backpropagation）的算法扮演的，这种算法会在网络里面“倒着走”，用微积分来估计每个权重参数需要调整多少。
     
+    
+    ''')
 
 
 def llm_datacollection():
@@ -266,3 +287,14 @@ Question 16: How to improve LLM reasoning if your COT prompt fails?
 
 """)
 
+
+def llm_finetuning():
+    st.markdown('''
+    - full fine-tuning:  catastrophic forgetting模型在原始任务上的能力表现非常糟糕
+    - parameter-efficient fine-tuning，PEFT: 
+        - selective
+        - additive
+        - reparametrization-based
+            - LoRA（Low-Rank Adaptation）
+    
+    ''')
