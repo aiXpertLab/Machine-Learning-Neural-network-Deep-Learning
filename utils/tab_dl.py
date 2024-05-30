@@ -19,6 +19,8 @@ general="""
         - Deep learning models are capable of automatically learning feature representations from data without requiring explicit feature engineering.
         - Examples of deep learning architectures include convolutional neural networks (CNNs) for image analysis, recurrent neural networks (RNNs) for sequential data, and transformer-based architectures for natural language processing.
         - The depth of neural networks in deep learning refers to the number of layers, and deep networks may consist of dozens or even hundreds of layers.
+        
+        
     """
 
 

@@ -47,11 +47,39 @@ Under supervised ML, two major subcategories are:
 - Regression machine learning systems – Systems where the value being predicted falls somewhere on a continuous spectrum. These systems help us with questions of “How much?” or “How many?”
 - Classification machine learning systems – Systems where we seek a yes-or-no prediction, such as “Is this tumor cancerous?”, “Does this cookie meet our quality standards?”, and so on.
 
+Here are some of the most important supervised learning algorithms:
+
+    • k-Nearest Neighbors
+    • Linear Regression
+    • Logistic Regression
+    • Support Vector Machines (SVMs)
+    • Decision Trees and Random Forests
+    • Neural networks2
+
+
 **Unsupervised machine learning** is typically tasked with finding relationships within data. There are no training examples used in this process. Instead, the system is given a set of data and tasked with finding patterns and correlations therein. A good example is identifying close-knit groups of friends in social network data.
 
 The machine learning algorithms used to do this are very different from those used for supervised learning, and the topic merits its own post. However, for something to chew on in the meantime, take a look at clustering algorithms such as k-means, and also look into dimensionality reduction systems such as principle component analysis. You can also read our article on semi-supervised image classification.
 
-Deep learning is a subset of machine learning, so it doesn't replace traditional machine learning techniques but rather complements them. While deep learning has shown remarkable success in various tasks such as image recognition, natural language processing, and speech recognition, there are still many scenarios where traditional machine learning algorithms excel.
+Here are some of the most important unsupervised learning algorithms (most of
+these are covered in Chapter 8 and Chapter 9):
+    • Clustering
+    —K-Means
+    —DBSCAN
+    —Hierarchical Cluster Analysis (HCA)
+    • Anomaly detection and novelty detection
+    —One-class SVM
+    —Isolation Forest
+    • Visualization and dimensionality reduction
+    —Principal Component Analysis (PCA)
+    —Kernel PCA
+    —Locally-Linear Embedding (LLE)
+    —t-distributed Stochastic Neighbor Embedding (t-SNE)
+    • Association rule learning
+    —Apriori
+    —Eclat
+
+** Deep learning** is a subset of machine learning, so it doesn't replace traditional machine learning techniques but rather complements them. While deep learning has shown remarkable success in various tasks such as image recognition, natural language processing, and speech recognition, there are still many scenarios where traditional machine learning algorithms excel.
 
 Machine learning encompasses a broad range of techniques beyond deep learning, including:
 
@@ -65,6 +93,8 @@ Machine learning encompasses a broad range of techniques beyond deep learning, i
 In summary, while deep learning has revolutionized many fields, traditional machine learning techniques remain essential in various working environments due to their interpretability, efficiency, and effectiveness in scenarios with limited data or computational resources.
 
 **Machine learning's goal is to predict well on new data drawn from a (hidden) true probability distribution**. 
+
+
 """)    
     st.image("./images/clustering.png")
 

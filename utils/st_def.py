@@ -92,23 +92,6 @@ def st_load_ML():
     st.image("./images/mlpipeline.png")
 
 
-def st_tf():
-    contents="""
-        ### 🚀 Tensorflow 🍨
-
-        TensorFlow APIs are arranged hierarchically, with the high-level APIs built on the low-level APIs. 
-        Machine learning researchers use the low-level APIs to create and explore new machine learning algorithms.
-        We will use a high-level API named `tf.keras` to define and train machine learning models and to make predictions. 
-        tf.keras is the TensorFlow variant of the open-source Keras API.
-
-        ### 📄Key Features📚:
-        -  🔍 No Coding Required: Say goodbye to developer fees and lengthy website updates. Store Spark’s user-friendly API ensures a smooth integration process.
-        -  📰 Empower Your Business: Offer instant customer support, improve lead generation, and boost conversion rates — all with minimal setup effort.
-        -  🍨 Seamless Integration: Maintain your existing website design and user experience. Store Spark seamlessly blends in, providing a unified customer journey.
-        """
-    st.markdown(contents)
-    st.image("./images/tf.png")
-
 def st_kaldi():
     contents="""
         ### 🚀 Kaldi 🍨
