@@ -3,26 +3,45 @@ from streamlit_extras.stateful_button import button
 
 def cp_general():
     st.markdown('''
-Convolution and the convolutional layer are the major building blocks used in convolutional
-neural networks. 
+Convolution and the convolutional layer are the major building blocks used in convolutional neural networks. 
 
-A convolution is the simple application of a filter to an input that results in an
-activation. 
+A convolution is the simple application of a filter to an input that results in an activation. 
 
 Repeated application of the same filter to an input results in a map of activations
-called a feature map, indicating the locations and strength of a detected feature in an input,
-such as an image. 
+called a feature map, indicating the locations and strength of a detected feature in an input, such as an image. 
 
-The innovation of convolutional neural networks is the ability to automatically
-learn a large number of filters in parallel specific to a training dataset under the constraints of
-a specific predictive modeling problem, such as image classification. The result is that highly
-specific features can be detected anywhere on input images. In this tutorial, you will discover
-how convolutions work in the convolutional neural network. After completing this tutorial, you
-will know:
+The innovation of convolutional neural networks is the ability to automatically learn a large number of filters in parallel specific to a training dataset under the constraints of
+a specific predictive modeling problem, such as image classification. The result is that highly specific features can be detected anywhere on input images. In this tutorial, you will discover
+how convolutions work in the convolutional neural network. After completing this tutorial, you will know:
 
 - Convolutional neural networks apply a filter to an input to create a feature map that summarizes the presence of detected features in the input.
 - Filters can be handcrafted, such as line detectors, but the innovation of convolutional neural networks is to learn the filters during training in the context of a specific prediction problem.
 - How to calculate the feature map for one- and two-dimensional convolutional layers in a convolutional neural network.    
+    
+    https://zhuanlan.zhihu.com/p/635438713
+    
+比如说老板命令张三干活，张三却到楼下打台球去了，后来被老板发现，他非常气愤，扇了张三一巴掌（注意，这就是`输入信号`，脉冲），
+
+于是张三的脸上会渐渐地（贱贱地）鼓起来一个包，张三的脸就是一个`系统`，而鼓起来的包就是张三的脸对巴掌的`响应`，好，这样就和信号系统建立起来意义对应的联系。
+
+下面还需要一些假设来保证论证的严谨：假定张三的脸是线性时不变系统，也就是说，无论什么时候老板打张三一巴掌，打在张三脸的同一位置（这似乎要求张三的脸足够光滑，
+如果张三长了很多青春痘，甚至整个脸皮处处连续处处不可导，那难度太大了，我就无话可说了哈哈），张三的脸上总是会在相同的时间间隔内鼓起来一个相同高度的包来，
+并且假定以鼓起来的包的`大小`作为`系统输出`。好了，那么，下面可以进入核心内容——卷积了！
+
+如果张三每天都到地下去打台球，那么老板每天都要扇张三一巴掌，不过当老板打张三一巴掌后，5分钟就消肿了，所以时间长了，张三甚至就适应这种生活了……
+
+如果有一天，老板忍无可忍，以0.5秒的间隔开始不间断的扇张三的过程，这样问题就来了，第一次扇张三鼓起来的包还没消肿，第二个巴掌就来了，张三脸上的包就可能鼓起来两倍高，
+老板不断扇张三，脉冲不断作用在张三脸上，效果不断叠加了，这样这些效果就可以求和了，结果就是张三脸上的包的高度随时间变化的一个函数了（注意理解）；
+
+如果老板再狠一点，频率越来越高，以至于都辨别不清时间间隔了，那么，求和就变成积分了。
+
+可以这样理解，在这个过程中的某一固定的时刻，张三的脸上的包的鼓起程度和什么有关呢？和之前每次打张三都有关！但是各次的贡献是不一样的，越早打的巴掌，贡献越小，
+所以这就是说，某一时刻的输出是之前很多次输入乘以各自的衰减系数之后的叠加而形成某一点的输出，然后再把不同时刻的输出点放在一起，形成一个函数，这就是卷积。
+
+###### 卷积之后的函数就是张三脸上的包的大小随时间变化的函数。
+
+本来张三的包几分钟就可以消肿，可是如果连续打，几个小时也消不了肿了，这难道不是一种平滑过程么？反映到剑桥大学的公式上，f(a)就是第a个巴掌，
+g(x-a)就是第a个巴掌在x时刻的作用程度，乘起来再叠加就ok了，大家说是不是这个道理呢？我想这个例子已经非常形象了，你对卷积有了更加具体深刻的了解了吗？
     
     ''')
 

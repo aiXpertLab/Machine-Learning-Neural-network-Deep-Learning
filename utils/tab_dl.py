@@ -1,31 +1,37 @@
 import streamlit as st
 
-general="""
-        Deep learning is a technique used to make predictions using data, and it heavily relies on neural networks. 
-        
-        Deep learning framework like **TensorFlow** or **PyTorch** instead of building your own neural network. 
-        That said, having some knowledge of how neural networks work is helpful because you can use it to better architect your deep learning models.
-
-        **Traditional Machine Learning:**
-
-        - These models typically involve feature engineering, where domain-specific features are manually crafted from raw data to feed into the learning algorithm.
-        - Examples of traditional machine learning algorithms include linear regression, logistic regression, decision trees, support vector machines, and k-nearest neighbors, among others.
-        - While some traditional machine learning algorithms may use ensemble techniques that combine multiple models (e.g., random forests, gradient boosting), they are not typically referred to as "multi-layer" in the same sense as deep neural networks.
-
-        **Deep Learning:**
-
-        Deep learning, on the other hand, specifically refers to neural networks with multiple layers (hence the term "deep").
-        - Deep learning architectures consist of multiple layers of interconnected neurons, allowing them to learn complex representations and hierarchies of features directly from raw data.
-        - Deep learning models are capable of automatically learning feature representations from data without requiring explicit feature engineering.
-        - Examples of deep learning architectures include convolutional neural networks (CNNs) for image analysis, recurrent neural networks (RNNs) for sequential data, and transformer-based architectures for natural language processing.
-        - The depth of neural networks in deep learning refers to the number of layers, and deep networks may consist of dozens or even hundreds of layers.
-        
-        
-    """
-
-
 def dl_general():
-    st.image("./images/mlpipeline.png")
+    st.image('./images/dl/main.png')
+    general="""
+            1. Loading Dataset
+            2. Chose Model (including activation/relu/softmax): `model = keras.Sequential([layers.Dense(512, activation="relu"),layers.Dense(10, activation="softmax")])`
+            3. Compile (optimizer, loss function, metric)
+            4. Reshape preprocessing data.
+            5. 
+            
+            
+            
+            Deep learning is a technique used to make predictions using data, and it heavily relies on neural networks. 
+            
+            Deep learning framework like **TensorFlow** or **PyTorch** instead of building your own neural network. 
+            That said, having some knowledge of how neural networks work is helpful because you can use it to better architect your deep learning models.
+
+            **Traditional Machine Learning:**
+
+            - These models typically involve feature engineering, where domain-specific features are manually crafted from raw data to feed into the learning algorithm.
+            - Examples of traditional machine learning algorithms include linear regression, logistic regression, decision trees, support vector machines, and k-nearest neighbors, among others.
+            - While some traditional machine learning algorithms may use ensemble techniques that combine multiple models (e.g., random forests, gradient boosting), they are not typically referred to as "multi-layer" in the same sense as deep neural networks.
+
+            **Deep Learning:**
+
+            Deep learning, on the other hand, specifically refers to neural networks with multiple layers (hence the term "deep").
+            - Deep learning architectures consist of multiple layers of interconnected neurons, allowing them to learn complex representations and hierarchies of features directly from raw data.
+            - Deep learning models are capable of automatically learning feature representations from data without requiring explicit feature engineering.
+            - Examples of deep learning architectures include convolutional neural networks (CNNs) for image analysis, recurrent neural networks (RNNs) for sequential data, and transformer-based architectures for natural language processing.
+            - The depth of neural networks in deep learning refers to the number of layers, and deep networks may consist of dozens or even hundreds of layers.
+            
+            
+        """
     st.markdown(general)    
     st.info("The Exchange Of Methods And Algorithms Between Human And Machine To Deep Learn And Apply Problem Solving Is Known As Deep Learning (DL) ― P.S. Jagadeesh Kumar")
 
@@ -151,9 +157,7 @@ def dl_theory():
     st.image("./images/attentiontypes.png")
 
 
-
-
-def st_dl1():
+def dl_1():
     st.image("./images/mlpipeline.png")
     st.markdown("""
 
@@ -177,88 +181,240 @@ def st_dl1():
     
     
 
-def st_dl2():
-    st.image("./images/mlpipeline.png")
-    st.markdown("""
+def dl_vision():
+    st.image("./images/zhang3.gif")
+    st.write('''One method from deep learning that deserves the most attention for application in computer vision is: `Convolutional Neural Networks (CNNs)`.
+             Additionally, both of the following network types may be useful for interpreting or developing
+inference models from the features learned and extracted by CNNs; they are:
+- Multilayer Perceptrons (MLP).
+- Recurrent Neural Networks (RNNs).
 
+The MLP or fully-connected type neural network layers are useful for developing models that make predictions given the learned features extracted by CNNs. RNNs, such as LSTMs,
+may be helpful when working with sequences of images over time, such as with video.
+
+Deep learning will not solve computer vision or artificial intelligence. To date, deep learning
+methods have been evaluated on a broader suite of problems from computer vision and achieved
+success on a small set, where success suggests performance or capability at or above what was
+previously possible with other methods. Importantly, those areas where deep learning methods
+are showing the greatest success are some of the more end-user facing, challenging, and perhaps
+more interesting problems. Five examples include:
+- Optical Character Recognition.
+- Image Classification.
+- Object Detection.
+- Face Detection.
+- Face Recognition.
+
+All five tasks are related under the umbrella of `object recognition`, which refers to tasks that involve identifying, localizing, and/or extracting specific content from digital photographs
+
+             ''')
+    
+
+def dl_cnn():
+    st.image('./images/dl/t4.png')
+    st.write('''
+
+一、从前馈神经网络说起
+
+1.必会的内功：前馈神经网络
+
+前馈神经网络（Feedforward Neural Networks）是最基础的神经网络模型，也被称为多层感知机（MLP）。它由多个神经元组成，每个神经元与前一层的所有神经元相连，形成一个“全连接”的结构。每个神经元会对其输入数据进行线性变换（通过权重矩阵），然后通过一个非线性函数（如ReLU或Sigmoid）进行激活。这就是前馈神经网络的基本操作。
+CNN就是一种特殊的前馈神经网络。这两者的主要区别在于，CNN在前馈神经网络的基础上加入了卷积层和池化层（下边会讲到），以便更好地处理图像等具有空间结构的数据。
+
+CNN就是在此基础上，将全连接层换成卷积层，并在ReLU层之后加入池化层（非必须），那么一个基本的CNN结构就可以表示成这样：
+
+CNN本质上是一个多层感知机，其成功的原因关键在于它所采用的局部连接和共享权值的方式，一方面减少了的权值的数量使得网络易于优化，另一方面降低了模型复杂度，降低了过拟合的风险。CNN是一个前溃式神经网络，能从一个二维图像中提取其拓扑结构，采用反向传播算法来优化网络结构，求解网络中的未知参数。CNN具有一些传统技术所没有的优点：良好的容错能力、并行处理能力和自学习能力，可处理环境信息复杂，背景知识不清楚，推理规则不明确情况下的问题，允许样品有较大的缺损、畸变，运行速度快，自适应性能好，具有较高的分辨率。它是通过结构重组和减少权值将特征抽取功能融合进多层感知器，省略识别前复杂的图像特征抽取过程。
+
+CNN网络一共有5个层级结构：
+
+- 输入层
+- 卷积层
+- 激活层
+- 池化层
+- 全连接FC层
+     ''')
+    
+def dl_mlp():
+    # https://zhuanlan.zhihu.com/p/65472471
+    st.image('./images/dl/t1.png')
+    st.markdown("""
+            #### 任务描述        
+            我们已知四个数据点(1,1)(-1,1)(-1,-1)(1,-1)，这四个点分别对应I~IV象限，如果这时候给我们一个新的坐标点（比如(2,2)），那么它应该属于哪个象限呢？（没错，当然是第I象限，但我们的任务是要让机器知道）
+
+            “分类”是神经网络的一大应用，我们使用神经网络完成这个分类任务。        """)
+    st.image('./images/dl/t2.png')
+    st.markdown("""
+                这里我们构建一个两层神经网络，理论上两层神经网络已经可以拟合任意函数。
+                1.1.输入层
+
+                在我们的例子中，输入层是坐标值，例如（1,1），这是一个包含两个元素的数组，也可以看作是一个1*2的矩阵。输入层的元素维度与输入量的特征息息相关，如果输入的是一张32*32像素的灰度图像，那么输入层的维度就是32*32。
+
+                1.2.从输入层到隐藏层
+
+                连接输入层和隐藏层的是W1和b1。由X计算得到H十分简单，就是矩阵运算：
+
+
+                如果你学过线性代数，对这个式子一定不陌生。如上图中所示，在设定隐藏层为50维（也可以理解成50个神经元）之后，矩阵H的大小为（1*50）的矩阵。
+
+                1.3.从隐藏层到输出层
+
+                连接隐藏层和输出层的是W2和b2。同样是通过矩阵运算进行的：                
+                        
+                1.4.分析
+
+                通过上述两个线性方程的计算，我们就能得到最终的输出Y了，但是如果你还对线性代数的计算有印象的话，应该会知道：一系列线性方程的运算最终都可以用一个线性方程表示。也就是说，上述两个式子联立后可以用一个线性方程表达。对于两次神经网络是这样，就算网络深度加到100层，也依然是这样。这样的话神经网络就失去了意义。
+
+                所以这里要对网络注入灵魂：激活层。
+
+                ##### 2.激活层
+                简而言之，激活层是为矩阵运算的结果添加非线性的。常用的激活函数有三种，分别是阶跃函数、Sigmoid和ReLU。不要被奇怪的函数名吓到，其实它们的形式都很简单，如下图：
+
+                其中，阶跃函数输出值是跳变的，且只有二值，较少使用；Sigmoid函数在当x的绝对值较大时，曲线的斜率变化很小（梯度消失），并且计算较复杂；ReLU是当前较为常用的激活函数。
+
+                需要注意的是，每个隐藏层计算（矩阵线性运算）之后，都需要加一层激活层，要不然该层线性计算是没有意义的。""")
+    st.image('./images/dl/t3.png')
+    st.markdown("""
+                3.输出的正规化
+                在图4中，输出Y的值可能会是(3,1,0.1,0.5)这样的矩阵，诚然我们可以找到里边的最大值“3”，从而找到对应的分类为I，但是这并不直观。我们想让最终的输出为概率，也就是说可以生成像(90%,5%,2%,3%)这样的结果，这样做不仅可以找到最大概率的分类，而且可以知道各个分类计算的概率值。
+
+                具体是怎么计算的呢？
+
+                计算公式如下：
+
+
+                简单来说分三步进行：（1）以e为底对所有元素求指数幂；（2）将所有指数幂求和；（3）分别将这些指数幂与该和做商。
+
+                这样求出的结果中，所有元素的和一定为1，而每个元素可以代表概率值。
+
+                我们将使用这个计算公式做输出结果正规化处理的层叫做“Softmax”层。此时的神经网络将变成如下图所示：
+
+
+                图5.输出正规化之后的神经网络
+                4.如何衡量输出的好坏
+                通过Softmax层之后，我们得到了I，II，III和IV这四个类别分别对应的概率，但是要注意，这是神经网络计算得到的概率值结果，而非真实的情况。
+
+                比如，Softmax输出的结果是(90%,5%,3%,2%)，真实的结果是(100%,0,0,0)。虽然输出的结果可以正确分类，但是与真实结果之间是有差距的，一个优秀的网络对结果的预测要无限接近于100%，为此，我们需要将Softmax输出结果的好坏程度做一个“量化”。
+
+                一种直观的解决方法，是用1减去Softmax输出的概率，比如1-90%=0.1。不过更为常用且巧妙的方法是，求对数的负数。
+
+                还是用90%举例，对数的负数就是：-log0.9=0.046
+
+                可以想见，概率越接近100%，该计算结果值越接近于0，说明结果越准确，该输出叫做“交叉熵损失（Cross Entropy Error）”。
+
+                我们训练神经网络的目的，就是尽可能地减少这个“交叉熵损失”。
+
+                此时的网络如下图：
+
+
+                图6.计算交叉熵损失后的神经网络
+                5.反向传播与参数优化
+                上边的1~4节，讲述了神经网络的正向传播过程。一句话复习一下：神经网络的传播都是形如Y=WX+b的矩阵运算；为了给矩阵运算加入非线性，需要在隐藏层中加入激活层；输出层结果需要经过Softmax层处理为概率值，并通过交叉熵损失来量化当前网络的优劣。
+
+                算出交叉熵损失后，就要开始反向传播了。其实反向传播就是一个参数优化的过程，优化对象就是网络中的所有W和b（因为其他所有参数都是确定的）。
+
+                神经网络的神奇之处，就在于它可以自动做W和b的优化，在深度学习中，参数的数量有时会上亿，不过其优化的原理和我们这个两层神经网络是一样的。
+
+                这里举一个形象的例子描述一下这个参数优化的原理和过程：
+
+                假设我们操纵着一个球型机器行走在沙漠中
+
+
+                我们在机器中操纵着四个旋钮，分别叫做W1，b1，W2，b2。当我们旋转其中的某个旋钮时，球形机器会发生移动，但是旋转旋钮大小和机器运动方向之间的对应关系是不知道的。而我们的目的就是走到沙漠的最低点。
+
+
+                此时我们该怎么办？只能挨个试喽。
+
+                如果增大W1后，球向上走了，那就减小W1。
+
+                如果增大b1后，球向下走了，那就继续增大b1。
+
+                如果增大W2后，球向下走了一大截，那就多增大些W2。
+
+                。。。
+
+                这就是进行参数优化的形象解释（有没有想到求导？），这个方法叫做梯度下降法。
+
+                当我们的球形机器走到最低点时，也就代表着我们的交叉熵损失达到最小（接近于0）。
+
+                关于反向传播，还有许多可以讲的，但是因为内容较多，就放在下一篇文章中说吧。不过上述例子对于理解神经网络参数优化的过程，还是很有帮助的。
+
+                6.迭代
+
+                神经网络需要反复迭代。
+
+                如上述例子中，第一次计算得到的概率是90%，交叉熵损失值是0.046；将该损失值反向传播，使W1,b1,W2,b2做相应微调；再做第二次运算，此时的概率可能就会提高到92%，相应地，损失值也会下降，然后再反向传播损失值，微调参数W1,b1,W2,b2。依次类推，损失值越来越小，直到我们满意为止。
+
+                此时我们就得到了理想的W1,b1,W2,b2。
+
+                此时如果将任意一组坐标作为输入，利用图4或图5的流程，就能得到分类结果。
                 """)
 
-def st_dl3():
-    st.markdown("""
-        In this model, units represent the number of neurons in each LSTM layer. return_sequences=True is crucial in the first layers to ensure the output includes sequences, which are essential for stacking LSTM layers. The final LSTM layer does not return sequences as we prepare the data for the attention layer.                
-   
-        """)
 
-def st_dl4():
-    st.markdown("""
-        The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
-                """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl0():
+def dl_0():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl4():
+def dl_4():
     st.markdown("""
 The attention mechanism can be added to enhance the model’s ability to focus on relevant time steps:
                 """)
 
-def st_dl6():
+def dl_6():
     st.markdown("""
 
 Model: "sequential_1"
@@ -295,7 +451,7 @@ _________________________________________________________________
 
                 """)
 
-def st_dl11():
+def dl_11():
     st.markdown("""
 In this guide, we explored the complex yet fascinating task of using LSTM networks with an attention mechanism for stock price prediction, 
 specifically for Apple Inc. (AAPL). Key points include:

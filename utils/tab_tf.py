@@ -224,3 +224,18 @@ def tf_standard_models():
 2. Convolutional Neural Network
 3. Recurrent Neural Network
         """)
+
+def tf_dataset():
+    import numpy as np
+    import tensorflow as tf
+    random_numbers = np.random.normal(size = (1000,16))
+    dataset = tf.data.Dataset.from_tensor_slices(random_numbers)
+    
+    for i, element in enumerate(random_numbers):
+        st.text(element.shape)
+        if i>=2: break
+        
+    batched_dataset = dataset.batch(32)
+    for i, element in enumerate(batched_dataset):
+        st.text(element.shape)
+        if i>=2: break
