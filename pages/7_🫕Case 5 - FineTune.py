@@ -35,6 +35,43 @@ with t1:
              ''')
     
     st.subheader('Step 3 — Load LLaMA-3 with QLoRA Configuration')
+    st.subheader('Step 4 — Load Tokenizer')
+    st.write('''
+             
+When an LLM reads text, it first has to convert the text to a readable format. This process is known a tokenization, which is carried out by a tokenizer.
+
+Tokenizers are usually designed to work with their respective models.
+             
+                 ''')
+
+
+
+    st.write('''Step 5 — Load Dataset
+As explained in the previous section, we’ll be using the mlabonne/guanaco-llama2–1k dataset for fine-tuning given its high quality data labels and compatibility with LLaMA-3's prompt templates.
+                 ''')
+
+
+
+    st.write('''
+Step 6 — Load LoRA Configurations for PEFT
+I’m not going to go into the detailed differences between QLoRA and LoRA, but LoRA is essentially a less memory-efficient version of QLoRA since it does not use quantization, but may yield slightly higher accuracy. (You can read more about LoRA here.)
+
+In this step, we configure LoRA for parameter efficient fine-tuning (PEFT), which updates a small subset of parameters in contrast to normal fine-tuning, where all model parameters are updated instead.
+
+             
+             
+                 ''')
+
+
+
+    st.write('''
+Step 7 — Set Training Arguments and SFT Parameters
+We’re almost there, all that’s left is to set the arguments required for training and the supervised fine-tuning (SFT) parameters for the trainer:             
+             
+                 ''')
+
+
+
     st.write('''
              
              
