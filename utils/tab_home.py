@@ -2,39 +2,29 @@ import streamlit as st
 
 def home_main_contents():
     st.image('./images/dl/compare.png')
-    st.write("""
-             
-1843年，埃达• 洛夫莱斯伯爵夫人对这项发明评论道：“分析机谈不上能创造什么东西。它只能完成我们命令它做的任何事情……它的职责是帮助我们去
-实现我们已知的事情。”
+    st.code("""
+1950: `Alan Turing` published `Computer Machinery and Intelligence` which proposed a test of machine intelligence called The `Imitation Game`.
+1952: `Arthur Samuel` developed a program to play checkers, which is the first to ever learn the game independently.
+1955: `John McCarthy` held a workshop at Dartmouth on “artificial intelligence” which is the first use of the word, and how it came into popular usage.
+1958: `John McCarthy` created LISP (acronym for List Processing), the first programming language for AI research, which is still in popular use to this day.
+1959: `Arthur Samuel` created the term “machine learning” when doing a speech about teaching machines to play chess better than the humans who programmed them.
+1961: The first industrial robot Unimate started working on an assembly line at General Motors in New Jersey, tasked with transporting die casings and welding parts on cars (which was deemed too dangerous for humans).
+1965: `Edward Feigenbaum` and `Joshua Lederberg` created the first `expert system` which was a form of AI programmed to replicate the thinking and decision-making abilities of human experts.
+1966: Joseph Weizenbaum created the first “chatterbot” (later shortened to chatbot), ELIZA, a mock psychotherapist, that used natural language processing (NLP) to converse with humans.1968: Soviet mathematician Alexey Ivakhnenko published “Group Method of Data Handling” in the journal “Avtomatika,” which proposed a new approach to AI that would later become what we now know as “Deep Learning.”
+1973: An applied mathematician named James Lighthill gave a report to the British Science Council, underlining that strides were not as impressive as those that had been promised by scientists, which led to much-reduced support and funding for AI research from the British government.
+1979: James L. Adams created The Standford Cart in 1961, which became one of the first examples of an autonomous vehicle. In ‘79, it successfully navigated a room full of chairs without human interference.
+1979: The American Association of Artificial Intelligence which is now known as the Association for the Advancement of Artificial Intelligence (AAAI) was founded.
 
-随后，人工智能先驱阿兰• 图灵在其1950 年发表的具有里程碑意义的论文“计算机器和智
-能”a 中，引用了上述评论并将其称为“洛夫莱斯伯爵夫人的异议”。图灵在这篇论文中介绍了图
-灵测试以及日后人工智能所包含的重要概念。在引述埃达• 洛夫莱斯伯爵夫人的同时，图灵还
-思考了这样一个问题：通用计算机是否能够学习与创新？他得出的结论是“能”。
-机器学习的概念就来自于图灵的这个问题：对于计算机而言，除了“我们命令它做的任何
-事情”之外，它能否自我学习执行特定任务的方法？计算机能否让我们大吃一惊？如果没有程
-序员精心编写的数据处理规则，计算机能否通过观察数据自动学会这些规则？
-图灵的这个问题引出了一种新的编程范式。在经典的程序设计（即符号主义人工智能的范
-式）中，人们输入的是规则（即程序）和需要根据这些规则进行处理的数据，系统输出的是答案
-（见图1-2）。利用机器学习，人们输入的是数据和从这些数据中预期得到的答案，系统输出的是
-规则。这些规则随后可应用于新的数据，并使计算机自主生成答案。
-             
-人工智能诞生于20 世纪50 年代，当时计算机科学这一新兴领域的少数先驱开始提出疑问：
-计算机是否能够“思考”？我们今天仍在探索这一问题的答案。人工智能的简洁定义如下：努
-力将通常由人类完成的智力任务自动化。因此，人工智能是一个综合性的领域，不仅包括机器
-学习与深度学习，还包括更多不涉及学习的方法。例如，早期的国际象棋程序仅包含程序员精
-心编写的硬编码规则，并不属于机器学习。在相当长的时间内，许多专家相信，只要程序员精
-心编写足够多的明确规则来处理知识，就可以实现与人类水平相当的人工智能。这一方法被称
-为符号主义人工智能（`symbolic AI`），从20 世纪50 年代到80 年代末是人工智能的主流范式。
-在20 世纪80 年代的专家系统（`expert system`）热潮中，这一方法的热度达到了顶峰。
+在相当长的时间内，许多专家相信，只要程序员精心编写足够多的明确规则来处理知识，就可以实现与人类水平相当的人工智能。这一方法被称为符号主义人工智能（`symbolic AI`）
+从20 世纪50 年代到80 年代末是人工智能的主流范式。在20 世纪80 年代的专家系统（`expert system`）热潮中，这一方法的热度达到了顶峰。
 
-虽然符号主义人工智能适合用来解决定义明确的逻辑问题，比如下国际象棋，但它难以给
-出明确的规则来解决更加复杂、模糊的问题，比如图像分类、语音识别和语言翻译。于是出现
+虽然符号主义人工智能适合用来解决定义明确的逻辑问题，比如下国际象棋，但它难以给出明确的规则来解决更加复杂、模糊的问题，比如图像分类、语音识别和语言翻译。于是出现
 了一种新的方法来替代符号主义人工智能，这就是机器学习（`machine learning`）。
              
              
              """)
     st.image("./images/ai.png")
+    
     main_contents="""
 In basic terms, the goal of using AI is to make computers think as humans do. 
 For example, to solve a sudoku problem, you can:
